@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Data Recording" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_camera"
+            android:summary="@string/preference_summary_camera"
+            android:title="@string/preference_title_camera" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preference_audio"
+            android:summary="@string/preference_summary_audio"
+            android:title="@string/preference_title_audio" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_beacon"
+            android:summary="@string/preference_summary_beacon"
+            android:title="@string/preference_title_beacon" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_proximity_sensor"
+            android:summary="@string/preference_summary_proximity_sensor"
+            android:title="@string/preference_title_proximity_sensor" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_accelerometer"
+            android:summary="@string/preference_summary_accelerometer"
+            android:title="@string/preference_title_accelerometer" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_rotation"
+            android:summary="@string/preference_summary_rotation_sensor"
+            android:title="@string/preference_title_rotation_sensor" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preference_gyroscope"
+            android:summary="@string/preference_summary_gyroscope"
+            android:title="@string/preference_title_gyroscope" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preference_magnetic_sensor"
+            android:summary="@string/preference_summary_magnetic_sensor"
+            android:title="@string/preference_title_magnetic_sensor" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preference_light_sensor"
+            android:summary="@string/preference_summary_light_sensor"
+            android:title="@string/preference_title_light_sensor" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Monitoring" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sound"
+            android:summary="Make a sound when user blinks"
+            android:title="Make a sound" />
+    </PreferenceCategory>
+    <!--
+    <PreferenceCategory android:title="Experimental Settings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="timer"
+            android:summary="Stop recording after 10 minnutes"
+            android:title="10 min timer" />
+    </PreferenceCategory>
+    -->
+
+</PreferenceScreen>

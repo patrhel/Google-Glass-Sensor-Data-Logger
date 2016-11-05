@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DataLoggerGlass</string>
+    <string name="action_settings">Settings</string>
+
+	<string name="preference_title_accelerometer">Accelerometer</string>
+	<string name="preference_summary_accelerometer">Enable or disable acceleration sensor logging</string>
+		
+	<string name="preference_title_gyroscope">Gyroscope</string>
+	<string name="preference_summary_gyroscope">Enable or disable gyroscope sensor logging</string>
+	
+	<string name="preference_title_rotation_sensor">Rotation Vector</string>
+	<string name="preference_summary_rotation_sensor">Enable or disable rotation vector logging</string>
+
+	<string name="preference_title_magnetic_sensor">Compass (3-axis)</string>
+	<string name="preference_summary_magnetic_sensor">Enable or disable magnetic sensor logging</string>
+		
+	<string name="preference_title_light_sensor">Light sensor</string>
+	<string name="preference_summary_light_sensor">Enable or disable light sensor logging</string>
+
+	<string name="preference_title_proximity_sensor">Proximity sensor</string>
+	<string name="preference_summary_proximity_sensor">Enable or disable proximity sensor logging (root access is needed)</string>
+
+	<string name="preference_title_beacon">Beacon detection</string>
+	<string name="preference_summary_beacon">Enable or disable beacon detection</string>
+	
+	<string name="preference_title_bluetooth">Bluetooth</string>
+	<string name="preference_summary_bluetooth">Enable or disable bluetooth logging</string>
+	
+	<string name="preference_title_wifi">Wifi access points</string>
+	<string name="preference_summary_wifi">Enable or disable logging of wifi access points in range</string>
+
+	<string name="preference_title_camera">Camera</string>
+	<string name="preference_summary_camera">Enable or disable taking pictures</string>
+	
+	<string name="preference_title_audio">Audio</string>
+	<string name="preference_summary_audio">Enable or disable audio recording</string>
+	    
+	<!-- activities -->
+	
+    <string name="label_one_category">Thinking</string>
+    <string name="label_two_category">Moving</string>
+    <string name="label_three_category">Others</string>
+    
+    <string name="label_one_up">Solving</string>
+    <string name="icon_one_up">icon_math</string>
+    <string name="label_one_left">Talking</string>
+    <string name="icon_one_left">icon_talking</string>
+    <string name="label_one_right">Reading</string>
+    <string name="icon_one_right">icon_reading</string>
+    <string name="label_one_down">Writing</string>
+    <string name="icon_one_down">icon_writing</string>
+    
+    <string name="label_two_up">Walking</string>
+    <string name="icon_two_up">icon_foot</string>
+    <string name="label_two_left">Stair climbing</string>
+    <string name="icon_two_left">icon_stair_climbing</string>
+    <string name="label_two_right">Bicycle</string>
+    <string name="icon_two_right">icon_bicycle</string>
+    <string name="label_two_down">Sawing</string>
+    <string name="icon_two_down">icon_sawing</string>
+    
+    
+    <string name="label_three_up">Eating</string>
+    <string name="icon_three_up">icon_eating</string>
+    <string name="label_three_left">Watching</string>
+    <string name="icon_three_left">icon_watching</string>
+    <string name="label_three_right">Coffee</string>
+    <string name="icon_three_right">icon_coffee</string>
+    <string name="label_three_down">Dishwasher</string>
+    <string name="icon_three_down">icon_dishwasher</string>
+    
+
+    <string name="label_stop_recording">Stopped activity recording</string>
+    <string name="icon_stop">icon_stop</string>
+	
+    <string name="glass_voice_trigger">Start data logger</string>
+    <string name="glass_voice_prompt">Start data logger</string>
+    
+	
+</resources>

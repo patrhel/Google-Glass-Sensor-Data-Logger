@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutBase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- Only here to adjust the SurfaceView -->
+
+    <Button
+        android:id="@+id/label_invisible_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="invisible"
+        android:visibility="invisible" />
+
+    <!-- - Camera preview -->
+
+    <SurfaceView
+        android:id="@+id/surfaceView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_invisible_button"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="288dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="24dp" >
+    </SurfaceView>
+    
+
+</RelativeLayout>
