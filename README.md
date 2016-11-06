@@ -16,5 +16,11 @@ First, a categorical overview is shown to the user by Google Glass' display. The
 ### Machine Learning - Activity Recognition
 This software is used in the area of activity recognition using a supervised machine learning approach. It allows to record sensor data and to perform real-time ground truth labeling. 
 
+### Internet of Things
+The integrated beacon detection module allows the Google Glass to detect nearby devices using Bluetooth Low Energy (BLE) technology. Devices sending out a beacon signal will thus be identifiable through their identification number. Furthermore, the integrated module allows calculating the distance to the beacon. Based on this data, applications in the area of IoT can be realized.
+
+### Smart Home Applications
+The integrated beacon detection module allows the Google Glass to detect nearby devices using Bluetooth Low Energy (BLE) technology. Devices sending out a beacon signal will thus be identifiable through their identification number. Furthermore, the integrated module allows calculating the distance to the beacon. Based on this data, smart home applications can be realized.
+
 ### Blink Detection
 A module which allows one to read out Google Glass' infrared eye proximity sensor is integrated. This sensor information can be used to perform real-time blink detection.
