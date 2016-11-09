@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Google Glass Sensor Data Logger by patrhel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Google Glass Sensor Data Logger</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/patrhel/Google-Glass-Sensor-Data-Logger" class="btn">View on GitHub</a>
+      <a href="https://github.com/patrhel/Google-Glass-Sensor-Data-Logger/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/patrhel/Google-Glass-Sensor-Data-Logger/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="google-glass-sensor-data-logger" class="anchor" href="#google-glass-sensor-data-logger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Google-Glass-Sensor-Data-Logger</h1>
+
+<p>This software is used in the area of activity recognition using a supervised machine learning approach. It allows to record sensor data and to perform a real-time ground truth labeling </p>
+
+<h2>
+<a id="functionality" class="anchor" href="#functionality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functionality</h2>
+
+<h3>
+<a id="sensor-data-logging" class="anchor" href="#sensor-data-logging" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sensor Data logging</h3>
+
+<p>This software is able to record motion, orientation, visual, acoustic, and beacon proximity sensor data on the Google Glass. Furthermore,  a module that allows one to read out Google Glass' infrared eye proximity sensor is integrated. This sensor information is used to perform real-time blink detection. For each sensor, the data is saved to a separate CSV file.</p>
+
+<h3>
+<a id="real-time-ground-truth-labeling" class="anchor" href="#real-time-ground-truth-labeling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Real-time ground truth labeling</h3>
+
+<p>An integrated activity logging interface allows real-time ground truth labeling by the use of Google Glass' touchpad.
+First, a categorical overview is shown to the user by Google Glass' display. The respective activity label is simply logged through the act of selecting an activity. The overview consists of three categories. A category can be selected by the number of fingers that are used. Based on the swipe direction, the user chooses a particular activity. An activity label contains the name of the activity as well as the activity's start timestamp. Due to the way the activity logging interface was integrated into the sensor data logging software, it is possible to continuously label in a single sensor data recording process while performing several successive activities. Once the label is set, Google Glass' display is automatically turned off to avoid influencing the participant's behavior while executing the activity. </p>
+
+<h2>
+<a id="possible-applications" class="anchor" href="#possible-applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Possible Applications</h2>
+
+<h3>
+<a id="machine-learning---activity-recognition" class="anchor" href="#machine-learning---activity-recognition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Machine Learning - Activity Recognition</h3>
+
+<p>This software is used in the area of activity recognition using a supervised machine learning approach. It allows to record sensor data and to perform real-time ground truth labeling. </p>
+
+<h3>
+<a id="internet-of-things" class="anchor" href="#internet-of-things" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Internet of Things</h3>
+
+<p>The integrated beacon detection module allows the Google Glass to detect nearby devices using Bluetooth Low Energy (BLE) technology. Devices sending out a beacon signal will thus be identifiable through their identification number. Furthermore, the integrated module allows calculating the distance to the beacon. Based on this data, applications in the area of IoT can be realized.</p>
+
+<h3>
+<a id="smart-home-applications" class="anchor" href="#smart-home-applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Smart Home Applications</h3>
+
+<p>The integrated beacon detection module allows the Google Glass to detect nearby devices using Bluetooth Low Energy (BLE) technology. Devices sending out a beacon signal will thus be identifiable through their identification number. Furthermore, the integrated module allows calculating the distance to the beacon. Based on this data, smart home applications can be realized.</p>
+
+<h3>
+<a id="blink-detection" class="anchor" href="#blink-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blink Detection</h3>
+
+<p>A module which allows one to read out Google Glass' infrared eye proximity sensor is integrated. This sensor information can be used to perform real-time blink detection.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/patrhel/Google-Glass-Sensor-Data-Logger">Google Glass Sensor Data Logger</a> is maintained by <a href="https://github.com/patrhel">patrhel</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
