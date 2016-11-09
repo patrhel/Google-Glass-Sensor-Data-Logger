@@ -104,7 +104,6 @@ public class LogFileWriter {
 			} catch (IOException e) {
 				Log.e("LogFileWriter", "Error while writing.");
 				e.printStackTrace();
-
 			}
 		}
 	}
