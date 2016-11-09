@@ -76,11 +76,10 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		Up, Left, Right, Down
 	}
 
-	private int DURATION_FOR_ALERT = 1500;// 800;
-	private int DURATION_FOR_ALERT_STOP_RECORDING = 3000;// 800;
-	private int EXPAND_DELAY = 0;// 30;
+	private int DURATION_FOR_ALERT = 1500;
+	private int DURATION_FOR_ALERT_STOP_RECORDING = 3000;
+	private int EXPAND_DELAY = 0;
 	private final Handler mHandler = new Handler();
-	// private Handler mHandlerTimer = new Handler();
 
 	private Context mContext;
 	private SharedPreferences sharedPreferences;
@@ -125,8 +124,6 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		mLayout.addView(twoTapView);
 		mLayout.addView(threeTapView);
 
-		// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
 		foregroundProcessing();
 		startRecording();
 
@@ -141,6 +138,7 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 10000);
 
 		/*
+		 * Hint: If audio capture is started the proximity sensor provides always the same value (XE18)
 		 * mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0); mSoundID = mSoundPool.load(getApplicationContext(),
 		 * R.raw.finished, 0); mWakeLock = ((PowerManager)
 		 * getSystemService(Context.POWER_SERVICE)).newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK , "DataLoggerGlass");
@@ -277,8 +275,6 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 				// bindIndent.putExtra("logSessionDirectoryPath", logSessionDirectoryPath);
 				// mContext.startService(mServiceIntent);
 
-				/* if (sharedPreferences.getBoolean("timer", false)) {{}} */
-
 			} else {
 				Toast.makeText(getBaseContext(), "Error: Storage does not have enough space.", Toast.LENGTH_SHORT).show();
 			}
@@ -328,17 +324,6 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		return true;
 	}
 
-	/*
-	 * private final Runnable finihsedrecordingTimer = new Runnable() {
-	 * 
-	 * @Override public void run() { // mSoundPool.play(mSoundID, 1.0f, 1.0f, 0, 0, 1.0f); // turn screen on again
-	 * PowerManager.WakeLock wl = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(
-	 * PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "My Tag"); wl.acquire(); wl.release();
-	 * 
-	 * stopRecording();
-	 * 
-	 * } };
-	 */
 
 	public static Camera getCameraInstance() {
 		Camera c = null;
@@ -456,12 +441,7 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		});
 
 		try {
-			/*
-			 * for (int i = 0; i <= 9; i++) { beaconManager.startRangingBeaconsInRegion(new Region("Beacon " + i, Identifier
-			 * .parse("00000000-0000-0000-0000-00000000000" + i), Identifier.parse("1"), Identifier.parse("1"))); }
-			 */
-
-			beaconManager.startRangingBeaconsInRegion(new Region("DFKI", null, null, null));
+			beaconManager.startRangingBeaconsInRegion(new Region("Test", null, null, null));
 
 		} catch (RemoteException e) {
 		}
@@ -562,8 +542,7 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 			case 2: // stop button
 				labelLogFileWriter.writeLabel(getString(R.string.label_two_down));
 				getString(R.string.label_two_down);
-				// alertDialogBuilder.setTitle(R.string.label_two_down);
-				// alertDialogBuilder.setIcon(resourceID(R.string.icon_two_down));
+
 
 				stopRecording();
 
@@ -597,16 +576,10 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 		audio.playSoundEffect(Sounds.TAP);
 
 		// if a label was set flush the BufferedWriter just to be save
-
 		labelLogFileWriter.discreteFlush();
 		beaconLogFileWriter.discreteFlush();
 
-		// mHandlerTimer = new Handler();
-		// mHandlerTimer.removeCallbacks(finihsedrecordingTimer);
-		// mHandlerTimer.postDelayed(finihsedrecordingTimer, (1000 * 60 * 10) + (1000 * 10)); // 10min + 10 sek //310000);
-
 		// label was set
-
 		// Intent loggerIntent = new Intent(LabelActivity.this, LoggerActivity.class);
 		// startActivity(loggerIntent);
 	}
@@ -755,9 +728,6 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 
 		// influences the hole system timeout
 		Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 10000);
-
-		// mWakeLock.release();
-		// mHandler.postDelayed(restartApp, 50);
 	}
 
 	@Override
@@ -796,22 +766,10 @@ public class LoggerActivity extends Activity implements BeaconConsumer {
 			mInPreview = false;
 		}
 
-		/*
-		 * if (mHandlerTimer != null) { mHandlerTimer.removeCallbacksAndMessages(null); }
-		 */
 		MainActivity.mStopProcess = true;
 		super.onDestroy();
 	}
 
-	private final Runnable restartApp = new Runnable() {
-		@Override
-		public void run() {
-			// restartWakelock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(
-			// PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP
-			// | PowerManager.ON_AFTER_RELEASE, "Matrix");
-			// restartWakelock.acquire(100);
-		}
-	};
 
 	@Override
 	public boolean onGenericMotionEvent(MotionEvent event) {

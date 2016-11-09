@@ -15,10 +15,8 @@ public class ThreeFingerGestureDetector extends GestureDetector {
 	}
 
 	private int[] mPointerIndexes = new int[3]; // pointerId => pointerIndex
-	private float[] mPointerPositionsX = new float[3]; // pointerId =>
-														// pointerPosition
-	private float[] mPointerPositionsY = new float[3]; // pointerId =>
-														// pointerPosition
+	private float[] mPointerPositionsX = new float[3]; // pointerId => pointerPosition
+	private float[] mPointerPositionsY = new float[3]; // pointerId => pointerPosition
 
 	private boolean mCanBegin = true;
 	private boolean mHandling = false;

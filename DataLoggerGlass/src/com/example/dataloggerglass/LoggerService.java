@@ -21,7 +21,6 @@ public class LoggerService extends Service implements SensorEventListener {
 
 	private Sensor rvSensor;
 	private LogFileWriter rotationLogFileWriter;
-	// private LogFileWriter quaternionLogFileWriter;
 
 	private Sensor gsSensor;
 	private LogFileWriter gyroLogFileWriter;
@@ -63,7 +62,7 @@ public class LoggerService extends Service implements SensorEventListener {
 		foregroundProcessing();
 		super.onStartCommand(intent, flags, startId);
 
-		return START_REDELIVER_INTENT; // ;START_STICKY;
+		return START_REDELIVER_INTENT; // START_STICKY;
 	}
 
 	private void foregroundProcessing() {
@@ -131,14 +130,6 @@ public class LoggerService extends Service implements SensorEventListener {
 
 	}
 
-	/*
-	 * public void discreteFlush(){
-	 * 
-	 * if (accSensor != null) { accLogFileWriter.discreteFlush(); } if (rvSensor != null) { rotationLogFileWriter.discreteFlush();
-	 * //quaternionLogFileWriter.discreteFlush(); } if (gsSensor != null) { gyroLogFileWriter.discreteFlush(); } if (mgSensor !=
-	 * null) { mgLogFileWriter.discreteFlush(); } if (liSensor != null) { lightSensorLogFileWriter.discreteFlush(); } if
-	 * (mIRSensorLogger != null) { irLogFileWriter.discreteFlush(); } }
-	 */
 
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -154,10 +145,6 @@ public class LoggerService extends Service implements SensorEventListener {
 		case Sensor.TYPE_ROTATION_VECTOR:
 			rotationLogFileWriter.writeRotationVectorData(timestamp, event.accuracy, event.values[0], event.values[1],
 					event.values[2]);
-			// float[] quaternion = new float[4];
-			// SensorManager.getQuaternionFromVector(quaternion, event.values);
-			// quaternionLogFileWriter.writeQuaternionData(timestamp, event.accuracy, quaternion[0], quaternion[1], quaternion[2],
-			// quaternion[3]);
 			break;
 		case Sensor.TYPE_GYROSCOPE:
 			gyroLogFileWriter.writeGyroscopeData(timestamp, event.accuracy, event.values[0], event.values[1], event.values[2]);
@@ -185,7 +172,6 @@ public class LoggerService extends Service implements SensorEventListener {
 		}
 		if (rvSensor != null) {
 			rotationLogFileWriter.closeWriter();
-			// quaternionLogFileWriter.closeWriter();
 			rvSensor = null;
 		}
 		if (gsSensor != null) {

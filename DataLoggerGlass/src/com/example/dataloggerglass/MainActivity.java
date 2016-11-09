@@ -97,8 +97,7 @@ public class MainActivity extends Activity {
 		wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "DataLoggerGlass");
 		wakeLock.acquire();
 
-		// influences the hole system timeout
-
+		// Hint: influences the hole system timeout
 		Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 10000);
 
 	}
@@ -139,10 +138,6 @@ public class MainActivity extends Activity {
 			clearCalibration();
 			mJustSelected = true;
 			return false;
-			/*
-			 * case R.id.preferences: mStopProcess = false; startActivity(new Intent(MainActivity.this,
-			 * PreferencesActivity.class)); mJustSelected = false; return false;
-			 */
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -150,7 +145,6 @@ public class MainActivity extends Activity {
 	@Override
 	public void onOptionsMenuClosed(Menu menu) {
 		if (mJustSelected) {
-			// FIXME: need to wait a bit
 			Handler h = new Handler(Looper.getMainLooper());
 			h.post(new Runnable() {
 				@Override
